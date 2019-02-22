@@ -69,7 +69,7 @@ Install_ffmpeg()
 	cd ${runPath}
 	wget http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2
 	tar -xjvf ffmpeg-4.1.tar.bz2
-	cd ffmpeg-4.1.tar.bz2
+	cd ffmpeg-4.1
 	./configure
 	make
 	make install
