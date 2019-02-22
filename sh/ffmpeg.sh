@@ -16,3 +16,4 @@ make
 make install
 cd
 rm -rf ffmpeg*
+ffmpeg -version
