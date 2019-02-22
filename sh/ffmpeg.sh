@@ -8,8 +8,8 @@ make install
 cd
 rm -rf yasm*
 cd
-wget http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2
-tar -xjvf ffmpeg-4.1.tar.bz2
+wget http://ffmpeg.org/releases/ffmpeg-4.1.tar.gz
+tar -xzvf ffmpeg-4.1.tar.gz
 cd ffmpeg-4.1
 ./configure
 make
