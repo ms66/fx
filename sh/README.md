@@ -1,4 +1,4 @@
-  # 安装Centos 一键ffmpeg
+  # CentOS 一键安装ffmpeg
 wget https://fx.luss.vip/sh/ffmpeg.sh && sh ffmpeg.sh
-  # 安装Centos 一键ffmpeg
+  # CentOS 一键安装ffmpeg
 wget https://fx.luss.vip/sh/ffmpeg.sh && sh ffmpeg.sh
