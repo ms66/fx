@@ -67,7 +67,7 @@ Install_amrwb()
 Install_ffmpeg()
 {
 	cd ${runPath}
-  wget http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2
+	wget http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2
 	tar -xjvf ffmpeg-4.1.tar.bz2
 	cd ffmpeg-4.1.tar.bz2
 	./configure --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-version3 --enable-shared
