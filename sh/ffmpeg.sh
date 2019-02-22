@@ -13,7 +13,7 @@ Install_yasm()
 	./configure
 	make
 	make install
-	cd ..
+	cd
 	rm -rf yasm*
 }
 Install_lame()
@@ -25,7 +25,7 @@ Install_lame()
 	./configure
 	make
 	make install
-	cd ..
+	cd
 	rm -rf lame*
 }
 Install_amr()
@@ -37,7 +37,7 @@ Install_amr()
 	./configure
 	make
 	make install
-	cd ..
+	cd
 	rm -rf opencore-amr*
 }
 Install_amrnb()
@@ -49,7 +49,7 @@ Install_amrnb()
 	./configure
 	make
 	make install
-	cd .. 
+	cd
 	rm -rf amrnb*
 }
 Install_amrwb()
@@ -61,7 +61,7 @@ Install_amrwb()
 	./configure
 	make
 	make install
-	cd ..
+	cd
 	rm -rf amrwb*
 }
 Install_ffmpeg()
@@ -73,7 +73,7 @@ Install_ffmpeg()
 	./configure --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-version3 --enable-shared
 	make
 	make install
-	cd ..
+	cd
 	rm -rf ffmpeg*
 	ldconfig
 }
