@@ -1,9 +1,3 @@
-#!/bin/bash
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH
-
-runPath="/root"
-
 Install_yasm()
 {
 	cd
@@ -75,7 +69,6 @@ Install_ffmpeg()
 	make install
 	cd
 	rm -rf ffmpeg*
-	ldconfig
 }
 Install_yasm
 Install_lame
