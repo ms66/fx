@@ -7,3 +7,4 @@ make
 sudo make install
 cd
 rm -rf tengine*
+rm -rf Tengine.sh
