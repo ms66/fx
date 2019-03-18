@@ -1,4 +1,4 @@
-yum install gcc openssl-devel pcre-devel zlib-devel
+yum install gcc gcc++ openssl-devel pcre-devel zlib-devel
 wget http://tengine.taobao.org/download/tengine-2.2.3.tar.gz
 tar -zxvf tengine-2.2.3.tar.gz
 cd tengine-2.2.3
