@@ -137,3 +137,4 @@ if [[ "$ipv6" != "" ]]; then
     printf "%-32s%-24s%-14s\n" "Node Name" "IPv6 address" "Download Speed"
     speed_v6 && next
 fi
+rm -rf OStest.sh
