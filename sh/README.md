@@ -1,3 +1,5 @@
+  # CentOS 一键测试
+wget https://fx.luss.vip/sh/OStest.sh && sh OStest.sh
   # 提前YUM一下，或许能解决你安装的问题！
 yum install make gcc gcc-c++
   # CentOS 一键安装ffmpeg
