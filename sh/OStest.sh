@@ -42,9 +42,9 @@ speed_v4() {
     speed_test_v4 'http://speedtest.singapore.linode.com/100MB-singapore.bin' 'Linode:新加坡'
     speed_test_v4 'http://speedtest.london.linode.com/100MB-london.bin' 'Linode:伦敦-英国'
     speed_test_v4 'http://speedtest.frankfurt.linode.com/100MB-frankfurt.bin' 'Linode:德国法兰克福'
-    speed_test_v4 'http://speedtest.fremont.linode.com/100MB-fremont.bin' 'Linode:弗里蒙特-加利福尼亚州'
-    speed_test_v4 'http://speedtest.dal05.softlayer.com/downloads/test100.zip' 'Softlayer:达拉斯-德克萨斯州'
-    speed_test_v4 'http://speedtest.sea01.softlayer.com/downloads/test100.zip' 'Softlayer:西雅图-华盛顿州'
+    speed_test_v4 'http://speedtest.fremont.linode.com/100MB-fremont.bin' 'Linode:弗里蒙特'
+    speed_test_v4 'http://speedtest.dal05.softlayer.com/downloads/test100.zip' 'Softlayer:达拉斯'
+    speed_test_v4 'http://speedtest.sea01.softlayer.com/downloads/test100.zip' 'Softlayer:西雅图'
     speed_test_v4 'http://speedtest.fra02.softlayer.com/downloads/test100.zip' 'Softlayer:德国法兰克福'
     speed_test_v4 'http://speedtest.sng01.softlayer.com/downloads/test100.zip' 'Softlayer:新加坡'
     speed_test_v4 'http://speedtest.hkg02.softlayer.com/downloads/test100.zip' 'Softlayer:香港'
@@ -52,12 +52,12 @@ speed_v4() {
 
 speed_v6() {
     speed_test_v6 'http://speedtest.atlanta.linode.com/100MB-atlanta.bin' 'Linode:亚特兰大'
-    speed_test_v6 'http://speedtest.dallas.linode.com/100MB-dallas.bin' 'Linode:达拉斯-德克萨斯州'
-    speed_test_v6 'http://speedtest.newark.linode.com/100MB-newark.bin' 'Linode:纽瓦克-新泽西州'
+    speed_test_v6 'http://speedtest.dallas.linode.com/100MB-dallas.bin' 'Linode:达拉斯'
+    speed_test_v6 'http://speedtest.newark.linode.com/100MB-newark.bin' 'Linode:纽瓦克'
     speed_test_v6 'http://speedtest.singapore.linode.com/100MB-singapore.bin' 'Linode:新加坡'
     speed_test_v6 'http://speedtest.tokyo.linode.com/100MB-tokyo.bin' 'Linode, Tokyo:东京'
-    speed_test_v6 'http://speedtest.sjc03.softlayer.com/downloads/test100.zip' 'Softlayer:圣何塞-加利福尼亚州'
-    speed_test_v6 'http://speedtest.wdc01.softlayer.com/downloads/test100.zip' 'Softlayer:华盛顿-华盛顿州'
+    speed_test_v6 'http://speedtest.sjc03.softlayer.com/downloads/test100.zip' 'Softlayer:圣何塞'
+    speed_test_v6 'http://speedtest.wdc01.softlayer.com/downloads/test100.zip' 'Softlayer:华盛顿'
     speed_test_v6 'http://speedtest.par01.softlayer.com/downloads/test100.zip' 'Softlayer:巴黎'
     speed_test_v6 'http://speedtest.sng01.softlayer.com/downloads/test100.zip' 'Softlayer:新加坡'
     speed_test_v6 'http://speedtest.tok02.softlayer.com/downloads/test100.zip' 'Softlayer:东京'
@@ -103,24 +103,24 @@ disk_used_size=$( calc_disk "${disk_size2[@]}" )
 
 clear
 next
-echo -e "CPU型号            : ${BLUE}$cname${PLAIN}"
-echo -e "核心数量      : ${BLUE}$cores${PLAIN}"
-echo -e "CPU频率        : ${BLUE}$freq MHz${PLAIN}"
-echo -e "磁盘总大小   : ${BLUE}$disk_total_size GB ($disk_used_size GB Used)${PLAIN}"
-echo -e "内存总量  : ${BLUE}$tram MB ($uram MB Used)${PLAIN}"
-echo -e "交换总量 : ${BLUE}$swap MB ($uswap MB Used)${PLAIN}"
-echo -e "系统正常运行时间        : ${BLUE}$up${PLAIN}"
-echo -e "负载平均值         : ${BLUE}$load${PLAIN}"
-echo -e "操作系统                   : ${BLUE}$opsy${PLAIN}"
-echo -e "Arch                 : ${BLUE}$arch ($lbit Bit)${PLAIN}"
-echo -e "内核               : ${BLUE}$kern${PLAIN}"
+echo -e "CPU型号           : ${BLUE}$cname${PLAIN}"
+echo -e "核心数量          : ${BLUE}$cores${PLAIN}"
+echo -e "CPU频率           : ${BLUE}$freq MHz${PLAIN}"
+echo -e "磁盘总大小        : ${BLUE}$disk_total_size GB ($disk_used_size GB Used)${PLAIN}"
+echo -e "内存总量          : ${BLUE}$tram MB ($uram MB Used)${PLAIN}"
+echo -e "交换总量          : ${BLUE}$swap MB ($uswap MB Used)${PLAIN}"
+echo -e "系统正常运行时间  : ${BLUE}$up${PLAIN}"
+echo -e "负载平均值        : ${BLUE}$load${PLAIN}"
+echo -e "操作系统          : ${BLUE}$opsy${PLAIN}"
+echo -e "Arch              : ${BLUE}$arch ($lbit Bit)${PLAIN}"
+echo -e "内核              : ${BLUE}$kern${PLAIN}"
 next
 io1=$( io_test )
-echo -e "I / O速度（第1次运行）   : ${YELLOW}$io1${PLAIN}"
+echo -e "I / O速度（第1次运行）    : ${YELLOW}$io1${PLAIN}"
 io2=$( io_test )
-echo -e "I / O速度（第二次运行）   : ${YELLOW}$io2${PLAIN}"
+echo -e "I / O速度（第2次运行）    : ${YELLOW}$io2${PLAIN}"
 io3=$( io_test )
-echo -e "I / O速度（第3次运行）   : ${YELLOW}$io3${PLAIN}"
+echo -e "I / O速度（第3次运行）    : ${YELLOW}$io3${PLAIN}"
 ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
 [ "`echo $io1 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw1=$( awk 'BEGIN{print '$ioraw1' * 1024}' )
 ioraw2=$( echo $io2 | awk 'NR==1 {print $1}' )
@@ -129,7 +129,7 @@ ioraw3=$( echo $io3 | awk 'NR==1 {print $1}' )
 [ "`echo $io3 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw3=$( awk 'BEGIN{print '$ioraw3' * 1024}' )
 ioall=$( awk 'BEGIN{print '$ioraw1' + '$ioraw2' + '$ioraw3'}' )
 ioavg=$( awk 'BEGIN{printf "%.1f", '$ioall' / 3}' )
-echo -e "平均I / O速度    : ${YELLOW}$ioavg MB/s${PLAIN}"
+echo -e "平均I / O速度             : ${YELLOW}$ioavg MB/s${PLAIN}"
 next
 printf "%-32s%-24s%-14s\n" "节点名称" "IPv4地址" "下载速度"
 speed_v4 && next
