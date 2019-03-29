@@ -1,7 +1,7 @@
 yum install gcc gcc++ openssl-devel pcre-devel zlib-devel
-wget http://tengine.taobao.org/download/tengine-2.2.3.tar.gz
-tar -zxvf tengine-2.2.3.tar.gz
-cd tengine-2.2.3
+wget http://tengine.taobao.org/download/tengine-2.3.0.tar.gz
+tar -zxvf tengine-2.3.0.tar.gz
+cd tengine-2.3.0
 ./configure
 make
 sudo make install
