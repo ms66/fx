@@ -1,7 +1,7 @@
   # CentOS 一键测试
 wget https://fx.luss.vip/sh/OStest.sh && sh OStest.sh
   # 提前YUM一下，或许能解决你安装的问题！
-yum install gcc gcc++ openssl-devel pcre-devel zlib-devel
+yum install gcc gcc++ openssl-devel pcre-devel zlib-devel wget
   # CentOS 一键安装ffmpeg
 wget https://fx.luss.vip/sh/ffmpeg.sh && sh ffmpeg.sh
   # CentOS 一键安装Tenging(给网站提供淘宝网级别的动态加速)
