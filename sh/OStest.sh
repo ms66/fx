@@ -36,33 +36,6 @@ speed_test_v6() {
     printf "${YELLOW}%-32s${GREEN}%-24s${RED}%-14s${PLAIN}\n" "${nodeName}" "${ipaddress}" "${speedtest}"
 }
 
-speed_v4() {
-    speed_test_v4 'http://cachefly.cachefly.net/100mb.test' 'CacheFly'
-    speed_test_v4 'http://speedtest.tokyo.linode.com/100MB-tokyo.bin' 'Linode:东京'
-    speed_test_v4 'http://speedtest.singapore.linode.com/100MB-singapore.bin' 'Linode:新加坡'
-    speed_test_v4 'http://speedtest.london.linode.com/100MB-london.bin' 'Linode:伦敦-英国'
-    speed_test_v4 'http://speedtest.frankfurt.linode.com/100MB-frankfurt.bin' 'Linode:德国法兰克福'
-    speed_test_v4 'http://speedtest.fremont.linode.com/100MB-fremont.bin' 'Linode:弗里蒙特'
-    speed_test_v4 'http://speedtest.dal05.softlayer.com/downloads/test100.zip' 'Softlayer:达拉斯'
-    speed_test_v4 'http://speedtest.sea01.softlayer.com/downloads/test100.zip' 'Softlayer:西雅图'
-    speed_test_v4 'http://speedtest.fra02.softlayer.com/downloads/test100.zip' 'Softlayer:德国法兰克福'
-    speed_test_v4 'http://speedtest.sng01.softlayer.com/downloads/test100.zip' 'Softlayer:新加坡'
-    speed_test_v4 'http://speedtest.hkg02.softlayer.com/downloads/test100.zip' 'Softlayer:香港'
-}
-
-speed_v6() {
-    speed_test_v6 'http://speedtest.atlanta.linode.com/100MB-atlanta.bin' 'Linode:亚特兰大'
-    speed_test_v6 'http://speedtest.dallas.linode.com/100MB-dallas.bin' 'Linode:达拉斯'
-    speed_test_v6 'http://speedtest.newark.linode.com/100MB-newark.bin' 'Linode:纽瓦克'
-    speed_test_v6 'http://speedtest.singapore.linode.com/100MB-singapore.bin' 'Linode:新加坡'
-    speed_test_v6 'http://speedtest.tokyo.linode.com/100MB-tokyo.bin' 'Linode, Tokyo:东京'
-    speed_test_v6 'http://speedtest.sjc03.softlayer.com/downloads/test100.zip' 'Softlayer:圣何塞'
-    speed_test_v6 'http://speedtest.wdc01.softlayer.com/downloads/test100.zip' 'Softlayer:华盛顿'
-    speed_test_v6 'http://speedtest.par01.softlayer.com/downloads/test100.zip' 'Softlayer:巴黎'
-    speed_test_v6 'http://speedtest.sng01.softlayer.com/downloads/test100.zip' 'Softlayer:新加坡'
-    speed_test_v6 'http://speedtest.tok02.softlayer.com/downloads/test100.zip' 'Softlayer:东京'
-}
-
 io_test() {
     (LANG=C dd if=/dev/zero of=test_$$ bs=64k count=16k conv=fdatasync && rm -f test_$$ ) 2>&1 | awk -F, '{io=$NF} END { print io}' | sed 's/^[ \t]*//;s/[ \t]*$//'
 }
@@ -131,10 +104,5 @@ ioall=$( awk 'BEGIN{print '$ioraw1' + '$ioraw2' + '$ioraw3'}' )
 ioavg=$( awk 'BEGIN{printf "%.1f", '$ioall' / 3}' )
 echo -e "平均I / O速度             : ${YELLOW}$ioavg MB/s${PLAIN}"
 next
-printf "%-32s%-24s%-14s\n" "节点名称" "IPv4地址" "下载速度"
-speed_v4 && next
-if [[ "$ipv6" != "" ]]; then
-    printf "%-32s%-24s%-14s\n" "Node Name" "IPv6 address" "Download Speed"
-    speed_v6 && next
 fi
 rm -rf OStest.sh
