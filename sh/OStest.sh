@@ -1,8 +1,3 @@
-if  [ ! -e '/usr/bin/wget' ]; then
-    echo "Error: wget command not found. You must be install wget command at first."
-    exit 1
-fi
-
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -18,22 +13,6 @@ get_opsy() {
 
 next() {
     printf "%-70s\n" "-" | sed 's/\s/-/g'
-}
-
-speed_test_v4() {
-    local output=$(LANG=C wget -4O /dev/null -T300 $1 2>&1)
-    local speedtest=$(printf '%s' "$output" | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}')
-    local ipaddress=$(printf '%s' "$output" | awk -F'|' '/Connecting to .*\|([^\|]+)\|/ {print $2}')
-    local nodeName=$2
-    printf "${YELLOW}%-32s${GREEN}%-24s${RED}%-14s${PLAIN}\n" "${nodeName}" "${ipaddress}" "${speedtest}"
-}
-
-speed_test_v6() {
-    local output=$(LANG=C wget -6O /dev/null -T300 $1 2>&1)
-    local speedtest=$(printf '%s' "$output" | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}')
-    local ipaddress=$(printf '%s' "$output" | awk -F'|' '/Connecting to .*\|([^\|]+)\|/ {print $2}')
-    local nodeName=$2
-    printf "${YELLOW}%-32s${GREEN}%-24s${RED}%-14s${PLAIN}\n" "${nodeName}" "${ipaddress}" "${speedtest}"
 }
 
 io_test() {
