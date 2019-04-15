@@ -1,4 +1,3 @@
-
 clear
 next
 echo -e "CPU型号           : ${BLUE}$cname${PLAIN}"
